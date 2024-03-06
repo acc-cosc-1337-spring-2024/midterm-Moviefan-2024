@@ -1,12 +1,20 @@
-#write function tests here, don't add input('') statements here!
+# question_tests.py
 import unittest
+from question_a import get_person_category
 
-#follow this example to add questions b, c, and d for testing including their functions
-from src.question_a.question_a import test_config
+class TestGetPersonCategory(unittest.TestCase):
 
-class Test_Config(unittest.TestCase):
+    def test_infant(self):
+        self.assertEqual(get_person_category(1), "infant")
 
-    def test_question_a_config(self):
-        self.assertEqual(True, test_config())
+    def test_child(self):
+        self.assertEqual(get_person_category(2), "child")
 
+    def test_teenager(self):
+        self.assertEqual(get_person_category(14), "teenager")
 
+    def test_adult(self):
+        self.assertEqual(get_person_category(20), "adult")
+
+if __name__ == "__main__":
+    unittest.main()
