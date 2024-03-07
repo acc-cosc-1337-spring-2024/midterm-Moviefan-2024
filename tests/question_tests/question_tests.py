@@ -1,13 +1,11 @@
 import unittest
-from question_b import get_day_of_week
+from question_c import get_random_number
 
-class TestDayOfWeek(unittest.TestCase):
-    def test_values(self):
-        self.assertEqual(get_day_of_week(0), "Invalid number")
-        self.assertEqual(get_day_of_week(1), "Monday")
-        self.assertEqual(get_day_of_week(2), "Tuesday")
-        self.assertEqual(get_day_of_week(3), "Wednesday")
-        self.assertEqual(get_day_of_week(8), "Invalid number")
+class TestGetRandomNumber(unittest.TestCase):
+    def test_get_random_number(self):
+        for _ in range(1000):
+            number = get_random_number()
+            self.assertTrue(1 <= number <= 5)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
